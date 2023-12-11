@@ -2,6 +2,7 @@ package com.example.ducanh.controller;
 
 import com.example.ducanh.model.Student;
 import com.example.ducanh.service.StudentService;
+import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,31 +22,16 @@ public class StudentController {
     public List<Student> getAllStudent() {
         return service.getAll();
     }
-//
-////    //Chi tiết sinh viên
-////    @GetMapping("")
-////    public List<Student> getAllStudent() {
-////        return service.getAll();
-////    }
-//
     //Thêm mới sinh viên
     @PostMapping("")
     public Object addStudent(@RequestBody Student s) {
         return service.addStudent(s);
     }
 
-//
-//    //Sửa sinh viên
-//    @PutMapping("")
-//    public Object updateStudent(@RequestBody Student s) {
-//        return service.updateStudent(s);
-//    }
-//
-//
-//    //Xóa sinh viên
-//    @DeleteMapping("/{id}")
-//    public Object deleteById(@PathVariable Integer id) {
-//        return service.deleteStudent(id);
-//    }
+    @DeleteMapping("/{id}")
+    public Object addStudent(@PathVariable Integer id) {
+        return service.deleteStudent(id);
+    }
+
 
 }
